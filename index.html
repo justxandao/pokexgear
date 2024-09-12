@@ -1,27 +1,88 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Login</title>
+    <title>PokeXGear</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900|Racing+Sans+One" rel="stylesheet">
 </head>
 <body>
-    <div class="login-container">
-        <h2>Bem-vindo(a)</h2>
-        <form>
-            <div class="input-container">
-                <label for="email">EMAIL</label>
-                <input type="email" id="email" placeholder="name_example@gmail.com" required>
+    <div class="container">
+        <div class="options">
+            <div class="logo">
+                <img src="./assets/PokeXGear.png" alt="Logo">
+                <div class="logo-text">PokeXGear</div>
             </div>
-            <div class="input-container">
-                <label for="password">Senha</label>
-                <input type="password" id="password" placeholder="Senha" required>
-                <a href="#" class="forgot-password">Esqueceu?</a>
+            <div class="menu-item">
+                <span class="icon user-icon"></span>
+                <span>Personagens</span>
             </div>
-            <button type="submit" class="login-button">LOGIN</button>
-        </form>
+            <div class="menu-item">
+                <span class="icon tasks-icon"></span>
+                <span>Tasks & Quests</span>
+            </div>
+            <div class="menu-item">
+                <span class="icon planner-icon"></span>
+                <span>Planejador</span>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="header">
+                <h1>Otimize sua rotina na PxG!</h1>
+                <p>Você é um jogador dedicado e deseja maximizar seu tempo no jogo?</p>
+                <p>Aqui você poderá organizar suas atividades diárias, definir lembretes de tarefas e criar metas.</p>
+                <img src="./assets/piplup_pokegear.png" alt="Piplup">
+            </div>
+            <div class="rotation" id="rotationSection">
+                <div class="rotation-cards">
+                    <!-- Boss Card -->
+                    <div class="badge-container">
+                        <a href="#" target="_blank" class="badge-container" id="boss-link">
+                            <img id="boss-card" class="badge-img boss-image" src="" alt="Boss">
+                        </a>
+                        <div class="tooltip">
+                            <button class="wiki-button" id="boss-wiki-button" onclick="redirectToWiki('boss')">Wiki</button>
+                        </div>
+                    </div>
+
+                    <!-- DZ Card -->
+                    <div class="badge-container">
+                        <img id="dz-card" class="badge-img dz-image" src="" alt="DZ">
+                        <div class="tooltip">
+                            <span id="dz-tooltip-text"> </span>
+                            <button class="copy-icon" onclick="copyToClipboard('dz-tooltip-text')"></button>
+                            <button class="wiki-button" id="dz-wiki-button" onclick="redirectToWiki('dz')">Wiki</button>
+                        </div>
+                    </div>
+
+                    <!-- Merchant Card -->
+                    <div class="badge-container">
+                        <img id="merchant-card" class="badge-img merchant-image" src="" alt="Merchant">
+                        <div class="tooltip">
+                            <span id="merchant-tooltip-text"> </span>
+                            <button class="copy-icon" onclick="copyToClipboard('merchant-tooltip-text')"></button>
+                            <button class="wiki-button" id="merchant-wiki-button" onclick="redirectToWiki('merchant')">Wiki</button>
+                        </div>
+                    </div>
+
+                    <!-- The Duke -->
+                    <div class="badge-container">
+                        <img id="the-duke" class="badge-img duke-image" src="" alt="The Duke">
+                        <div class="tooltip">
+                            <span id="duke-tooltip-text"> </span>
+                            <button class="copy-icon" onclick="copyToClipboard('duke-tooltip-text')"></button>
+                            <button class="wiki-button" id="duke-wiki-button" onclick="redirectToWiki('duke')">Wiki</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <script src="scripts.js"></script>
+
+    <footer>
+        <p>&copy; 2024 PokeXGear. Todos os direitos reservados. Desenvolvido por Xandev</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>

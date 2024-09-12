@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(50% 50% at 50% 50%, #273756 0%, #202739 100%);
+  }
+  
+.login-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+  }
+  
+h2 {
+    margin-bottom: 20px;
+  }
+  
+  .input-group {
+    position: relative;
+    margin-bottom: 25px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .input-group label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: #aaa;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+    background-color: white;
+    padding: 0 4px;
+  }
+  
+  .input-group input:focus + label,
+  .input-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    font-size: 12px;
+    color: #00aeff;
+    background-color: white;
+    padding: 0 5px;
+  }
+
+.input-group input:focus,
+.input-group input:not(:placeholder-shown) {
+  border-color: #00aeff; /* Borda azul */
+}
+  
+  .forgot-password {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    font-size: 12px;
+    color: #00aeff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+  
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #00aeff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+button:hover {
+    background-color: #008ecc;
+  }
+  
+.esqueceu {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    text-align: right;
+    color: #00aeff;
+    text-decoration: none;
+  }
+  
+.esqueceu:hover {
+    text-decoration: underline;
+  }
+  

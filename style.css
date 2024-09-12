@@ -1,77 +1,189 @@
-* {
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background: radial-gradient(50% 50% at 50% 50%, #273756 0%, #202739 100%);
+    color: #FFFFFF;
+    overflow: hidden;
 }
 
-body {
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    height: 100%;
+    max-height: 832px;
+}
+
+.options {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(0deg, #293B5B -60.78%, #121F32 100%);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo img {
+    width: 96px;
+    height: 126px;
+}
+
+.logo-text {
+    font-family: 'Racing Sans One';
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background-color: #121F32;
+}
+
+.menu-item .icon {
+    width: 30px;
+    height: 28px;
+    margin-right: 10px;
+}
+
+.header {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.header h1 {
+    font-size: 40px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.header img {
+    width: 225px;
+    height: 263px;
+    margin-top: 20px;
+}
+
+.rotation {
+    position: fixed; /* Altere para fixed para que o elemento flutue */
+    bottom: 5px; /* Distância do rodapé, ajuste conforme necessário */
+    right: 120px; /* Distância da borda direita, ajuste conforme necessário */
+    width: auto;
+    height: auto;
+    display: flex;
+    background: linear-gradient(0deg, #293B5B -60.78%, #121F32 100%);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.rotation-cards {
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row; /* Para organizar o conteúdo em linha */
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+}
+
+.badge-container {
+    position: relative;
+    display: inline-block;
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+.badge-img {
+    width: 301px;
+    height: 176px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    cursor: pointer; /* Muda o cursor para indicar um link */
+}
+
+.tooltip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 94%;
+    height: 87%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: flex;
+    flex-direction: column; /* Para organizar o conteúdo em coluna */
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    text-align: center;
+}
+
+.tooltip .copy-icon {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.badge-container:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.copy-icon, .wiki-button {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-size: 20px;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+}
+
+.copy-icon {
+    background-image: url('assets/copy.png');
+}
+
+.wiki-button {
+    background-color: #a400aa;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #1b2a41;
+    margin-top: 5px; /* Margem para separar os botões */
 }
 
-.login-container {
-    background-color: #f0f0f0;
-    border-radius: 8px;
-    padding: 40px;
-    width: 320px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.wiki-button:hover {
+    background-color: #6b0059;
+    transform: scale(1.05);
 }
 
-h2 {
-    margin-bottom: 20px;
-    color: #333;
+.wiki-button:active {
+    background-color: #2d003f;
 }
 
-.input-container {
-    margin-bottom: 20px;
-    position: relative;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333;
-}
-
-input {
-    width: calc(100% - 10px);
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    outline: none;
-    font-size: 14px;
-}
-
-.forgot-password {
-    position: absolute;
-    right: 10px;
-    top: 30px;
-    font-size: 12px;
-    color: #888;
-    text-decoration: none;
-}
-
-.forgot-password:hover {
-    text-decoration: underline;
-}
-
-.login-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #3498db;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.login-button:hover {
-    background-color: #2980b9;
-}
