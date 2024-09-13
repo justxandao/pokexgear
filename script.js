@@ -147,8 +147,3 @@ function redirectToWiki(cardType) {
     }
     window.open(url, '_blank');
 }
-
-function toggleRotations() {
-    const rotationsSection = document.getElementById('rotations-section');
-    rotationsSection.style.display = rotationsSection.style.display === 'none' ? 'block' : 'none';
-}

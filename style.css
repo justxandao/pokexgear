@@ -117,11 +117,8 @@ body {
 }
 
 .rotation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    padding: 10px;
+    height: 100%;
     background: linear-gradient(0deg, #293B5B -60.78%, #121F32 100%);
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
@@ -132,8 +129,6 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: auto;
-    height: auto;
 }
 
 .badge-container {
