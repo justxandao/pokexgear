@@ -6,6 +6,7 @@
     <title>PokeXGear</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,900|Racing+Sans+One" rel="stylesheet">
+    <link rel="icon" href="/assets/PokeXGear.png" type="image/x-icon">
 </head>
 <body>
     <div class="container">
@@ -51,8 +52,10 @@
                         <img id="dz-card" class="badge-img dz-image" src="" alt="DZ">
                         <div class="tooltip">
                             <span id="dz-tooltip-text"> </span>
-                            <button class="copy-icon" onclick="copyToClipboard('dz-tooltip-text')"></button>
-                            <button class="wiki-button" id="dz-wiki-button" onclick="redirectToWiki('dz')">Wiki</button>
+                            <div class="tooltip-buttons">
+                                <button class="copy-icon" onclick="copyToClipboard('dz-tooltip-text')"></button>
+                                <button class="wiki-button" id="dz-wiki-button" onclick="redirectToWiki('dz')">Wiki</button>
+                            </div>
                         </div>
                     </div>
 
@@ -61,8 +64,10 @@
                         <img id="merchant-card" class="badge-img merchant-image" src="" alt="Merchant">
                         <div class="tooltip">
                             <span id="merchant-tooltip-text"> </span>
-                            <button class="copy-icon" onclick="copyToClipboard('merchant-tooltip-text')"></button>
-                            <button class="wiki-button" id="merchant-wiki-button" onclick="redirectToWiki('merchant')">Wiki</button>
+                            <div class="tooltip-buttons">
+                                <button class="copy-icon" onclick="copyToClipboard('merchant-tooltip-text')"></button>
+                                <button class="wiki-button" id="merchant-wiki-button" onclick="redirectToWiki('merchant')">Wiki</button>
+                            </div>
                         </div>
                     </div>
 
@@ -71,8 +76,10 @@
                         <img id="the-duke" class="badge-img duke-image" src="" alt="The Duke">
                         <div class="tooltip">
                             <span id="duke-tooltip-text"> </span>
+                            <div class="tooltip-buttons">
                             <button class="copy-icon" onclick="copyToClipboard('duke-tooltip-text')"></button>
                             <button class="wiki-button" id="duke-wiki-button" onclick="redirectToWiki('duke')">Wiki</button>
+                            </div>
                         </div>
                     </div>
                 </div>

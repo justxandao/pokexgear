@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    position: relative;
+    position: flex;
     width: 100%;
     max-width: 1280px;
     height: 100%;
@@ -128,7 +128,7 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
     display: flex;
-    flex-direction: column; /* Para organizar o conteúdo em coluna */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 10px;
@@ -137,6 +137,12 @@ body {
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
     text-align: center;
+}
+
+.tooltip-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .tooltip .copy-icon {
@@ -156,11 +162,13 @@ body {
     background-size: 20px;
     background-repeat: no-repeat;
     border: none;
+    display: flex;
+    flex-direction: row;
 }
 
 .copy-icon {
     background-image: url('assets/copy.png');
-    background-color: #919191a9;
+    background-color: #636363;
     color: white;
     font-size: 16px;
     border: none;
@@ -174,7 +182,8 @@ body {
 }
 
 .copy-icon:hover {
-    background-color: rgb(53, 53, 53);
+    background-color: rgb(150, 150, 150);
+    transform: scale(1.05);
 }
 
 .copy-icon:active {
@@ -182,7 +191,7 @@ body {
 }
 
 .wiki-button {
-    background-color: #a400aa;
+    background-color: #790065;
     color: white;
     padding: 10px 20px;
     font-size: 16px;
@@ -197,7 +206,7 @@ body {
 }
 
 .wiki-button:hover {
-    background-color: #6b0059;
+    background-color: #920097;
     transform: scale(1.05);
 }
 

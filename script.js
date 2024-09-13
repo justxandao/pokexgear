@@ -90,12 +90,6 @@ function updateRotatingImages() {
         const dzCardIndex = (weekOfYear) % dzImages.length;
         dzCard.src = dzImages[dzCardIndex].src;
         dzTooltipText.textContent = dzImages[dzCardIndex].text;
-
-        // Aplica a classe de destaque na "golden week"
-        dzCard.classList.remove('golden-week');
-        if (dzCardIndex === 3 || dzCardIndex === 7 || dzCardIndex === 11) {
-            dzCard.classList.add('golden-week');
-        }
     }
 }
 
@@ -125,17 +119,17 @@ function redirectToWiki(cardType) {
     let url;
     switch(cardType) {
         case 'boss':
-            const weekNumber = Math.floor(new Date().getDate() / 7) % 3; // Exemplo para escolher uma URL
-            url = bossLinks[weekNumber]; // Usando o array de URLs de links de bosses
+            const weekNumber = Math.floor(new Date().getDate() / 7) % 3;
+            url = bossLinks[weekNumber];
             break;
         case 'dz':
-            url = 'https://wiki.pokexgames.com/index.php/Rota%C3%A7%C3%A3o_Dimensional_Zone'; // Ajuste conforme necessário
+            url = 'https://wiki.pokexgames.com/index.php/Rota%C3%A7%C3%A3o_Dimensional_Zone';
             break;
         case 'merchant':
-            url = 'https://wiki.pokexgames.com/index.php/Nightmare_Merchant_(Resistance)'; // Ajuste conforme necessário
+            url = 'https://wiki.pokexgames.com/index.php/Nightmare_Merchant_(Resistance)';
             break;
         case 'duke':
-            url = 'https://wiki.pokexgames.com/index.php/The_Duke_(Resistance)'; // Ajuste conforme necessário
+            url = 'https://wiki.pokexgames.com/index.php/The_Duke_(Resistance)';
             break;
         default:
             url = '#';
