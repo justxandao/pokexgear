@@ -1,33 +1,49 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background: radial-gradient(50% 50% at 50% 50%, #273756 0%, #202739 100%);
+    background: radial-gradient(circle, #273756 0%, #202739 100%);
     color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     overflow: hidden;
 }
 
 .container {
-    position: flex;
+    display: flex;
     width: 100%;
     max-width: 1280px;
-    height: 100%;
-    max-height: 832px;
+    background-color: transparent;
+    margin: auto;
+    flex-direction: row;
+    gap: 20px;
 }
 
 .options {
-    position: absolute;
+    position: relative;
     width: 20%;
-    height: 100%;
     background: linear-gradient(0deg, #293B5B -60.78%, #121F32 100%);
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .logo {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .logo img {
@@ -35,8 +51,16 @@ body {
     height: 126px;
 }
 
+.menu-item img {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 .logo-text {
-    font-family: 'Racing Sans One';
+    font-family: 'Racing Sans One', sans-serif;
     font-size: 20px;
     margin-top: 10px;
 }
@@ -44,8 +68,11 @@ body {
 .menu-item {
     display: flex;
     align-items: center;
-    margin: 20px 0;
+    gap: 10px;
     cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 .menu-item:hover {
@@ -55,12 +82,20 @@ body {
 .menu-item .icon {
     width: 30px;
     height: 28px;
-    margin-right: 10px;
+    background-size: cover;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
 }
 
 .header {
     text-align: center;
-    padding-top: 40px;
+    margin-bottom: 40px;
 }
 
 .header h1 {
@@ -72,6 +107,7 @@ body {
 .header p {
     font-size: 20px;
     font-weight: 300;
+    margin-bottom: 10px;
 }
 
 .header img {
@@ -81,22 +117,19 @@ body {
 }
 
 .rotation {
-    position: fixed; /* Altere para fixed para que o elemento flutue */
-    bottom: 5px; /* Distância do rodapé, ajuste conforme necessário */
-    right: 120px; /* Distância da borda direita, ajuste conforme necessário */
-    width: auto;
-    height: auto;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
     background: linear-gradient(0deg, #293B5B -60.78%, #121F32 100%);
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
-    z-index: 1;
 }
 
 .rotation-cards {
-    justify-content: space-around;
     display: flex;
-    flex-direction: row; /* Para organizar o conteúdo em linha */
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     width: auto;
@@ -106,7 +139,7 @@ body {
 .badge-container {
     position: relative;
     display: inline-block;
-    text-align: center; /* Centraliza o conteúdo */
+    text-align: center;
 }
 
 .badge-img {
@@ -123,8 +156,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 94%;
-    height: 87%;
+    width: 100%;
+    height: 99%;
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
     display: flex;
@@ -212,4 +245,14 @@ body {
 
 .wiki-button:active {
     background-color: #2d003f;
+}
+
+footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 14px;
+    background-color: transparent;
 }

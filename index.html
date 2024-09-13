@@ -16,14 +16,17 @@
                 <div class="logo-text">PokeXGear</div>
             </div>
             <div class="menu-item">
+                <img src="./assets/user.png" alt="User">
                 <span class="icon user-icon"></span>
                 <span>Personagens</span>
             </div>
             <div class="menu-item">
+                <img src="./assets/task.png" alt="Tasks">
                 <span class="icon tasks-icon"></span>
                 <span>Tasks & Quests</span>
             </div>
             <div class="menu-item">
+                <img src="./assets/planner.png" alt="Planner">
                 <span class="icon planner-icon"></span>
                 <span>Planejador</span>
             </div>
@@ -37,6 +40,9 @@
             </div>
             <div class="rotation" id="rotationSection">
                 <div class="rotation-cards">
+                        <button id="toggle-rotations" onclick="toggleRotations()">Exibir/Ocultar Rotação</button>
+                        <div id="rotations-section" class="rotations">
+                            <div class="rotation-container">
                     <!-- Boss Card -->
                     <div class="badge-container">
                         <a href="#" target="_blank" class="badge-container" id="boss-link">

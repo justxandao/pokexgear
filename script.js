@@ -32,8 +32,6 @@ function updateRotatingImages() {
     ];
 
     const dzImages = [
-        { src: 'assets/dz/Card_DZ_Decima-Primeira-Semana.png', text: 'Darmanitan, Crustle, Mega Absol' },
-        { src: 'assets/dz/Card_DZ_Decima-Segunda-Semana.png', text: 'Hippowdon, Bisharp, Cradily, Excadrill, Darmanitan, Crustle, Mega Absol, Shiny Bronzong, Shiny Sylveon' },
         { src: 'assets/dz/Card_DZ_Primeira-Semana.png', text: 'Mega Slowbro, Emolga, Haxorus, Conkeldurr' },
         { src: 'assets/dz/Card_DZ_Segunda-Semana.png', text: 'Drapion, Breloom, Shiny Glaceon' },
         { src: 'assets/dz/Card_DZ_Terceira-Semana.png', text: 'Lickilicky, Heatmor, Mega Altaria, Mega Steelix' },
@@ -43,7 +41,9 @@ function updateRotatingImages() {
         { src: 'assets/dz/Card_DZ_Setima-Semana.png', text: 'Galvantula, Probopass, Shiny Manectric, Heatran' },
         { src: 'assets/dz/Card_DZ_Oitava-Semana.png', text: 'Zebstrika, Ambipom, Ferrothorn, Chandelure, Galvantula, Probopass, Shiny Manectric, Heatran, Giant Galvantula, Shiny Leafeon' },
         { src: 'assets/dz/Card_DZ_Nona-Semana.png', text: 'Hippowdon, Bisharp, Shiny Bronzong' },
-        { src: 'assets/dz/Card_DZ_Decima-Semana.png', text: 'Cradily, Excadrill, Shiny Sylveon' }
+        { src: 'assets/dz/Card_DZ_Decima-Semana.png', text: 'Cradily, Excadrill, Shiny Sylveon' },
+        { src: 'assets/dz/Card_DZ_Decima-Primeira-Semana.png', text: 'Darmanitan, Crustle, Mega Absol' },
+        { src: 'assets/dz/Card_DZ_Decima-Segunda-Semana.png', text: 'Hippowdon, Bisharp, Cradily, Excadrill, Darmanitan, Crustle, Mega Absol, Shiny Bronzong, Shiny Sylveon' }
     ];
 
     const today = new Date();
@@ -80,16 +80,27 @@ function updateRotatingImages() {
         merchantTooltipText.textContent = merchantImages[dayOfWeek].text;
     }
 
-    // Calcula a semana atual para o DZ Card
-    const weekOfYear = Math.floor(today.getDate() / 7); // Conta a semana do ano
+    // Lógica para atualizar a Dimensional Zone às sextas-feiras
+    function getDZWeekIndex() {
+        const startDate = new Date('2024-09-13'); // Primeira sexta-feira
+        const today = new Date();
+
+        // Calcula a diferença em dias entre hoje e a data inicial
+        const diffInDays = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
+
+        // Calcula o número de semanas
+        const dzWeekIndex = Math.floor(diffInDays / 7) % dzImages.length;
+
+        return dzWeekIndex;
+    }
+
     const dzCard = document.getElementById('dz-card');
     const dzTooltipText = document.getElementById('dz-tooltip-text');
 
-    // Define o índice para a décima segunda semana como ponto de partida
     if (dzCard && dzTooltipText) {
-        const dzCardIndex = (weekOfYear) % dzImages.length;
-        dzCard.src = dzImages[dzCardIndex].src;
-        dzTooltipText.textContent = dzImages[dzCardIndex].text;
+        const dzWeekIndex = getDZWeekIndex();
+        dzCard.src = dzImages[dzWeekIndex].src;
+        dzTooltipText.textContent = dzImages[dzWeekIndex].text;
     }
 }
 
@@ -126,14 +137,18 @@ function redirectToWiki(cardType) {
             url = 'https://wiki.pokexgames.com/index.php/Rota%C3%A7%C3%A3o_Dimensional_Zone';
             break;
         case 'merchant':
-            url = 'https://wiki.pokexgames.com/index.php/Nightmare_Merchant_(Resistance)';
+            url = 'https://wiki.pokexgames.com/index.php/Merchant';
             break;
         case 'duke':
-            url = 'https://wiki.pokexgames.com/index.php/The_Duke_(Resistance)';
+            url = 'https://wiki.pokexgames.com/index.php/The_Duke';
             break;
         default:
-            url = '#';
-            break;
+            url = 'https://wiki.pokexgames.com/';
     }
     window.open(url, '_blank');
+}
+
+function toggleRotations() {
+    const rotationsSection = document.getElementById('rotations-section');
+    rotationsSection.style.display = rotationsSection.style.display === 'none' ? 'block' : 'none';
 }
