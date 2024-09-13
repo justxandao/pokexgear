@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 function updateRotatingImages() {
     const dukeImages = [
         { src: 'assets/duke/domingo-pewter.png', text: '30304, 20351, 5' },
@@ -144,18 +143,3 @@ function redirectToWiki(cardType) {
     }
     window.open(url, '_blank');
 }
-=======
-document.querySelector('form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    if (!email || !password) {
-        alert('Por favor, preencha todos os campos.');
-        return;
-    }
-
-    // Adicione aqui o código para realizar a validação e o login
-    console.log(`Email: ${email}, Senha: ${password}`);
-});
->>>>>>> 1cd9bc05851071ed0263d96ea5fcfd12b70e65ea
