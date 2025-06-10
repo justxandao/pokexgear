@@ -1,19 +1,9 @@
-/* CSS Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    margin: 0;
     font-family: 'Roboto', sans-serif;
     background: radial-gradient(circle, #273756 0%, #202739 100%);
     color: #FFFFFF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
 }
 
@@ -21,58 +11,63 @@ body {
     display: flex;
     width: 100%;
     max-width: 1280px;
+    max-height: 1280px;
     background-color: transparent;
-    margin: auto;
     flex-direction: row;
     gap: 20px;
 }
 
+
 .options {
     position: relative;
-    width: 20%;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(0deg, #293B5B -60.78%, #121F32 100%);
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    align-items: center;
+    gap: 2px;
 }
 
 .logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .logo img {
-    width: 96px;
-    height: 126px;
+    width: 100px;
 }
+
 
 .menu-item img {
     width: 32px;
     height: 32px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
 }
 
 .logo-text {
-    font-family: 'Racing Sans One', sans-serif;
-    font-size: 20px;
+    font-family: 'Racing Sans One', cursive;
+    font-size: 24px;
     margin-top: 10px;
 }
 
 .menu-item {
+    color: #FFFFFF;
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-bottom: 5px;
     cursor: pointer;
     padding: 10px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+}
+
+
+.menu-item span {
+    font-size: 18px;
 }
 
 .menu-item:hover {
@@ -85,55 +80,56 @@ body {
     background-size: cover;
 }
 
+.menu-button {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+
 .main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     width: 80%;
-}
-
-.header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.header h1 {
-    font-size: 40px;
-    font-weight: 900;
-    margin-bottom: 10px;
-}
-
-.header p {
-    font-size: 20px;
-    font-weight: 300;
-    margin-bottom: 10px;
-}
-
-.header img {
-    width: 225px;
-    height: 263px;
-    margin-top: 20px;
+    margin-left: 20%;
+    padding: 40px;
+    flex-grow: 1;
 }
 
 .rotation {
-    width: 100%;
-    height: 100%;
+    margin-top: 20%;
+    margin-right: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background: linear-gradient(0deg, #293B5B -60.78%, #121F32 100%);
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
+    padding: 20px;
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-bottom: 20px;    
 }
 
 .rotation-cards {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .badge-container {
     position: relative;
-    display: inline-block;
     text-align: center;
 }
 
@@ -144,15 +140,15 @@ body {
     background-size: cover;
     background-position: center;
     z-index: 0;
-    cursor: pointer; /* Muda o cursor para indicar um link */
+    cursor: pointer;
 }
 
 .tooltip {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 99%;
+    width: 281px;
+    height: 156px;
     background-color: rgba(0, 0, 0, 0.7);
     color: #fff;
     display: flex;
@@ -240,14 +236,4 @@ body {
 
 .wiki-button:active {
     background-color: #2d003f;
-}
-
-footer {
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    text-align: center;
-    color: #ffffff;
-    font-size: 14px;
-    background-color: transparent;
 }
